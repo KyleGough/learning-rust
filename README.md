@@ -45,45 +45,10 @@ Running
 ## Cargo
 Cargo is the official package manager for the Rust language. Packages of code are referred to as `crates`. Cargo expects the all code is placed in the `src` directory.
 
-Verify installation
-```
-cargo --version
-```
-
-Create a new project. Also initialises a new Git repository.
-```
-cargo new learning-rust
-```
-
-Create a new project within an existing Git repository.
-```
-cargo new
-```
-
-Build a Cargo project
-```
-cargo build
-```
-
-Running a Cargo project
-```
-./target/debug/learning-rust
-```
-
-Build and Run in one command
-```
-cargo run
-```
-
-Release build
-```
-cargo build --release
-```
-
-Check code compiles without builing it
-```
-cargo check
-```
-
-
-
+- `cargo --version` - verify installation and check installed version.
+- `cargo new learning-rust` - create a new project with a new Git repository.
+- `cargo new` - create a new project within an existing Git repository.
+- `cargo build` - build a Cargo project.
+- `cargo run` - build and run in one command.
+- `cargo build --release` - release build.
+- `cargo check` - check code compiles without builing it.
