@@ -1,5 +1,8 @@
 # Rust
-Rust is an ahead-of-time compiled language.
+> This project will serve as my ongoing notes, code snippets, and review of the Rust programming language as I learn it. I am currently working through [The Rust Programming Language](https://doc.rust-lang.org/book/) book. 
+
+Rust is a multi-paradigm programming language emphasising performance, type safety, and concurrency. It was designed by Graydon Hoare and with its first stable version released in 2014.
+- Ahead-of-time compiled language.
 
 ## Table of Contents
 - [Introduction](#introduction)
