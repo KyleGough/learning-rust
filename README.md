@@ -1,44 +1,42 @@
 # Rust
 Rust is an ahead-of-time compiled language.
 
+## Table of Contents
+- [Introduction](#introduction)
+  - [Installation](#installation)
+  - [Hello World](#hello-world)
+  - [Compilation and Running](#compilation-and-running)
+- [Cargo](#cargo)
 
 ## Introduction
 
-Rust is an ahead-of-time compiled language.
-
-
 ### Installation
 Install Rust
-```
+```sh
 curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
 ```
 
 Update Rust
-```
+```sh
 rustup update
 ```
 
 Uninstall
-```
+```sh
 rustup self uninstall
 ````
 
 ### Hello World
 In a file called `hello_world.rs` add the following:
-```
+```rust
 fn main() {
   println!("Hello world");
 }
 ```
 
 ### Compilation and Running
-Compiling
-```
+```sh
 rustc hello_world.rs
-```
-
-Running
-```
 ./hello_world
 ```
 
