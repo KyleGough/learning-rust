@@ -56,6 +56,33 @@ Cargo is the official package manager for the Rust language. Packages of code ar
 - `cargo build --release` - release build.
 - `cargo check` - check code compiles without builing it.
 
+## Variables
+By default variables are immutable meaning once a value is bound to a name it cannot be changed. Constants are always immutable and the type of the value must always be annotated. By convention constants are named in uppercase letters with underscores.
+```rust
+let x = 3;
+let mut y = 0;
+y = 100;
+const SECONDS_IN_DAY: u32 = 60 * 60 * 24;
+```
+
+### Shadowing
+Declaring a new variable with the same name as a previously declared variable will "overshadow" the previous, taking any uses of the variable name until it is shadowed itself or the scope ends. Shadowing allows a variable to keep the same name, but change the value or even the type.
+```rust
+let x = 1;
+let x = x + 1;
+
+{
+    let x = x * 2;
+    println!("Value of x is {x}"); // 4
+}
+
+println!("Value of x is {x}"); // 2
+```
+```rust
+let password = "&t3e*OBt_c2";
+let password = password.len()";
+```
+
 ## Random Number Generator
 The `Rng` trait defines methods that random number generators implement and must be in scope to use those methods. The `rand::thread_rng` function provides a random number generator local to the current thread of execution and seeded by the OS. The `gen_range` method takes a range expression as an argument and generates a random number in the range.
 
@@ -80,5 +107,6 @@ Numerical
 
 
 ## String
-
+- `.len()` - returns the number of characters in a string.
 - `.trim()` - removes whitespace from the beginning and end of the string.
+
