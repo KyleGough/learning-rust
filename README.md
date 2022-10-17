@@ -95,11 +95,47 @@ fn main() {
 }
 ```
 
-## Types
-Numerical
-- `u32` - unsigned 32-bit number
-- `i32' - 32-bit number
-- 'i64' - 64-bit number
+## Data Types
+Every value in Rust has a data type which can be divided into two groups: scalar and compound. Rust must know the type of all variables at compile time else it will throw a compilation error.
+
+### Scalar Types
+- Integer
+  - `i8`, `i16`, `i32`, `i64`, `i128`, `isize`.
+  - `u8`, `u16`, `u32`, `u64`, `u128`, `usize`.
+  - Signed integers are stored using two's complement.
+  - The last variants `isize` and `usize` depend on the host systems architecture.
+  - In debug mode integer overflow results in the program panicing, in release mode integer overflow causes numbers to wrap according to two's complement.
+- Floating-Point number
+  - `f64` is the default value with double-precision, but Rust also offers a single-precision `f32`.
+- Boolean
+  - `true`, `false`.
+- Char
+  - 'char'
+  - Specified char literals with single quotes.
+  - Stored using 4 bytes representing a Unicode Scalar Value.
+
+### Compound Types
+Compound types group multiple values into a single type. The two primitive compound types that Rust provides are: tuples, and arrays.
+
+**Tuples** can have a number of values each with different types. In the snippet below Rust creates a tuple and binds it to the variable `tuple`. Patterns can be used to destructure the tuple into 3 parts. Alternatively, a tuple element can be accessed using `.` and the index.
+```rust
+let tuple: (i32, f64, char) = (128, 3.14, 'A');
+let (x, y, z) = tuple;
+println!("The value of x is {x}");
+println!("The value of y is {tuple.1}");
+```
+
+**Arrays** are a collection of multiple values of fixed length, all with the same data type. Data for arrays will be allocated on the stack.
+```rust
+let arr: [i32; 5] = [1, 2, 3, 4, 5];
+let first: i32 = arr[0];
+```
+Declare an array with the same value for each element.
+```rust
+let arr: [i32, 4] = [64; 4];
+```
+If an invalid array index is accessed (such as from user input) then Rust will throw a runtime error and exit the program without executing further code.
+
 
 ## Enums
 - `Result` - an enum with the variants `Ok` and `Err`
