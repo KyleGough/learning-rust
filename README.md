@@ -117,6 +117,7 @@ Every value in Rust has a data type which can be divided into two groups: scalar
 ### Compound Types
 Compound types group multiple values into a single type. The two primitive compound types that Rust provides are: tuples, and arrays.
 
+#### Tuples
 **Tuples** can have a number of values each with different types. In the snippet below Rust creates a tuple and binds it to the variable `tuple`. Patterns can be used to destructure the tuple into 3 parts. Alternatively, a tuple element can be accessed using `.` and the index.
 ```rust
 let tuple: (i32, f64, char) = (128, 3.14, 'A');
@@ -125,6 +126,7 @@ println!("The value of x is {x}");
 println!("The value of y is {tuple.1}");
 ```
 
+#### Arrays
 **Arrays** are a collection of multiple values of fixed length, all with the same data type. Data for arrays will be allocated on the stack.
 ```rust
 let arr: [i32; 5] = [1, 2, 3, 4, 5];
@@ -134,8 +136,7 @@ Declare an array with the same value for each element.
 ```rust
 let arr: [i32, 4] = [64; 4];
 ```
-If an invalid array index is accessed (such as from user input) then Rust will throw a runtime error and exit the program without executing further code.
-
+If an invalid array index is accessed (such as from user input) then Rust will throw a runtime error and exit the program without executing further code. Arrays must be indexed with the type `usize`.
 
 ## Enums
 - `Result` - an enum with the variants `Ok` and `Err`
