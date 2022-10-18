@@ -59,6 +59,17 @@ Cargo is the official package manager for the Rust language. Packages of code ar
 - `cargo build --release` - release build.
 - `cargo check` - check code compiles without builing it.
 
+## Terminology
+- **Expression** - an instruction that evaluates to a value.
+  - `12+ 18`
+  - Calling a function
+  - Calling a macro
+- **Statement** - an instruction that performs an action and doesn't return a value.
+  - `let x = 16;`
+  - End with a semicolon ";"
+- **Macros**
+  - `println!(...)`
+
 ## Variables
 By default variables are immutable meaning once a value is bound to a name it cannot be changed. Constants are always immutable and the type of the value must always be annotated. By convention constants are named in uppercase letters with underscores.
 ```rust
@@ -149,4 +160,91 @@ If an invalid array index is accessed (such as from user input) then Rust will t
 ## String
 - `.len()` - returns the number of characters in a string.
 - `.trim()` - removes whitespace from the beginning and end of the string.
+
+
+## Pattern Matching
+```rust
+match result {
+    Ok(num) => num,
+    Err(_) => 0
+};
+```
+
+## Functions
+- `main` is the entry point of Rust programs.
+- Functions are named using snake case (e.g. `add_one`).
+- Functions can be declared in any order as long as they are in scope when called.
+
+```rust
+fn foo(x: i32) {
+    println!("Value of x is {x}");
+}
+```
+
+Expressions evaluate to a value, such as numerical operations, calling functions, or calling macros.
+```rust
+let x = {
+    let y = 10;
+    let z = 2;
+    y / z
+};
+println!("x is {x}"); // 5
+```
+
+Functions will return the last expression implicitly, but values can be returned early using `return`. The following function doubles the input, note there is no semicolon as it is an expression.
+```rust
+fn double(x: i32) -> i32 {
+    x * 2
+}
+```
+
+## Comments
+```rust
+/*
+ * Block Comment
+ * Useful for temporarily disabling blocks of code.
+ */
+let x = 5; // Single line comment
+```
+
+## Formatted Print
+- `println!` - text printed to io::stdout with newline appended.
+- `print!` - text printed to io:stout without newline.
+- `eprintln!` - text printed to io::stderr with newline appended.
+- `eprint!` - text printed to io::stderr without newline.
+- `format!` - output formatted text to String.
+
+[Docs for std::fmt](https://doc.rust-lang.org/std/fmt/)
+```rust
+let name = "Alice";
+let age = 32;
+let theme = "red";
+
+// Positional arguments.
+println!("This is {0}, {0} is {1} years old.", name, age);
+
+// Named arguments.
+println!("{person} likes {colour} and {food}", food="pizza", person=name, colour=theme);
+
+// Other
+let x = 12345;
+println!("Base 10: {}", x);
+println!("Binary:  {:b}", x);
+println!("Octal:   {:o}", x);
+println!("Hex:     {:x}", x); // Lowercase hex
+println!("Hex:     {:X}", x); // Uppercase hex
+
+println!("{:5}cm", 20);
+println!("{x:<10}"); // Right-align in 10-wide column
+println!("{x:0>8}"); // Pad number with zeroes
+println!("{x:0>width$}", width=6); // Named arguments by appending '$'
+println!("{:^10}", x); // Centre align with width 10
+println!("{:+}", x); // Display numerical sign (+/-)
+println!("{:.2}", 3.141592); // Display number to 2 d.p.
+println!("{:.dp$}", dp=8); // Display number to N d.p.
+
+println!("{:<+20.2}", pi); // 2 d.p. right-aligned, 20 width, with sign.
+```
+
+Only types that implement `fmt::Display` can be formatted with `{}`.
 
