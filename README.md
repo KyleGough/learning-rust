@@ -49,7 +49,7 @@ rustc hello_world.rs
 ```
 
 ## Cargo
-Cargo is the official package manager for the Rust language. Packages of code are referred to as `crates`. Cargo expects the all code is placed in the `src` directory.
+Cargo is the official package manager for the Rust language. Packages of code are referred to as `crates`. Cargo expects that all code is placed in the `src` directory. Below are a number of useful commands to create, build, and run projects.
 
 - `cargo --version` - verify installation and check installed version.
 - `cargo new learning-rust` - create a new project with a new Git repository.
