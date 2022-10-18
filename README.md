@@ -1,5 +1,5 @@
 # Rust
-> This project will serve as my ongoing notes, code snippets, and review of the Rust programming language as I learn it. I am currently working through [The Rust Programming Language](https://doc.rust-lang.org/book/) book. 
+> This project will serve as my ongoing notes, code snippets, and review of the Rust programming language as I learn it whilst working through the [The Rust Programming Language](https://doc.rust-lang.org/book/) book. 
 
 Rust is a multi-paradigm programming language emphasising performance, type safety, and concurrency. It was designed by Graydon Hoare and released its first stable version in 2014.
 - Strongly, statically typed.
@@ -7,11 +7,20 @@ Rust is a multi-paradigm programming language emphasising performance, type safe
 - Type inference.
 
 ## Table of Contents
+- [Programs](#programs)
 - [Introduction](#introduction)
   - [Installation](#installation)
   - [Hello World](#hello-world)
   - [Compilation and Running](#compilation-and-running)
 - [Cargo](#cargo)
+
+## Programs
+This repository includes the following small programs and mini projects:
+- `hello-world` - basic hello world example.
+- `guessing-game` - guess a random number between 1 and 100.
+- `shadowing` - working example of variable shadowing.
+- `indexing` - indexing arrays with user input index.
+- `variables` - examples of defining variables.
 
 ## Introduction
 
