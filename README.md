@@ -25,20 +25,14 @@ This repository includes the following small programs and mini projects:
 ## Introduction
 
 ### Installation
-Install Rust
 ```sh
 curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
 ```
 
-Update Rust
+### Updating
 ```sh
 rustup update
 ```
-
-Uninstall
-```sh
-rustup self uninstall
-````
 
 ### Hello World
 In a file called `hello_world.rs` add the following:
