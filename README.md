@@ -235,16 +235,20 @@ println!("Hex:     {:x}", x); // Lowercase hex
 println!("Hex:     {:X}", x); // Uppercase hex
 
 println!("{:5}cm", 20);
-println!("{x:<10}"); // Right-align in 10-wide column
+println!("{x:>10}"); // Right-align in 10-wide column
 println!("{x:0>8}"); // Pad number with zeroes
 println!("{x:0>width$}", width=6); // Named arguments by appending '$'
 println!("{:^10}", x); // Centre align with width 10
 println!("{:+}", x); // Display numerical sign (+/-)
 println!("{:.2}", 3.141592); // Display number to 2 d.p.
 println!("{:.dp$}", dp=8); // Display number to N d.p.
-
-println!("{:<+20.2}", pi); // 2 d.p. right-aligned, 20 width, with sign.
+println!("{:>+20.2}", pi); // 2 d.p. right-aligned, 20 width, with sign.
 ```
 
 Only types that implement `fmt::Display` can be formatted with `{}`.
 
+### Other
+```rust
+cargo install cargo-watch
+cargo watch -x run
+```
